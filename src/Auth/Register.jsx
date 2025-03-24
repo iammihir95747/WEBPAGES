@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./auth.css";
+import "./Auth.css";
 import { toast, Toaster } from "react-hot-toast";
 
 
