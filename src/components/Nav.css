@@ -1,0 +1,192 @@
+/* Navbar Base Styles */
+.navbar {
+  background: rgb(133, 111, 230);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left{
+   display: flex;
+  align-content: center;
+  }
+
+
+.nav-logo{
+  overflow: hidden;
+  padding-left: 13px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight:bold;
+  color:#fff;
+}
+
+
+.nav-menu{
+  display: flex;
+  gap: 10px;
+  color: #fff;
+  list-style-type: none;
+ margin-top: 15px;
+ font-family: Arial, Helvetica, sans-serif;
+ text-align: center;
+}
+
+.nav-link{
+   margin-top: -1px;
+   display: flex;
+   border-radius:4px;
+   overflow: hidden;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   padding-left: 10px;
+   color: black;
+   padding-right: 10px;
+   font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+.nav-link:hover{
+  border: none;
+  color: #d1d1d1;
+}
+
+.nav-button {
+  display: inline-block;  /* Ensures padding works */
+  padding: 14px 14px 15px 15px;
+  margin-right:20px;  /* Proper padding */
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  text-align: center;
+}
+
+.nav-button:hover{
+  background-color: rgb(221, 219, 219);
+  transform: scale(1.01);
+}
+
+.nav-button-login{
+  margin-right: 10px;
+  display: inline-block;
+  padding: 14px 14px 15px 15px;
+  border: none;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  padding-left: 13px;
+  padding-right: 13px;
+  border-radius: 4px;
+  background: none;
+  color: #fff;
+}
+
+
+.nav-button-login:hover{
+ background-color: #ececec56;
+  transition: 0.1s ease-in-out;
+}
+
+
+.menu-toggle,
+.mobile-auth-buttons{
+  display: none;
+  color: #fff;
+}
+
+/* Mobile responsive css of a navigation bar for only mobile devices **?**
+
+/* 🔻 Responsive Mobile Styles 🔻 */
+@media (max-width: 768px) {
+  /* Align menu with logo */
+  .navbar{
+    width: 100%;
+    color: black;
+  }
+
+  .nav-left {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-logo {
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  /* Hamburger Menu */
+  .menu-toggle {
+    display: block;
+    font-size: 25px;
+    cursor: pointer;
+     width:10%;
+  }
+
+  /* Mobile Menu */
+  .nav-menu {
+
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    margin-left: -30px;
+    width: 100%;
+   background-color: #fcfcfc;
+   color: black;
+   font-weight: bold;
+    padding: 10px;
+    text-align: center;
+  }
+  .nav-menu.active {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    color: bl;
+    margin-top: -10px;
+    padding: 20px;
+    color: black;
+  }
+
+  .nav-menu .nav-link {
+    color: black;
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+    padding: 0px;
+  }
+
+  /* Hide Desktop Right Section */
+  .nav-right {
+    
+    display: none;
+  }
+
+  /* Mobile Login/Register Buttons Inside Menu */
+  .mobile-auth-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding-top: 10px;
+    color: black;
+  }
+
+  .nav-button, .nav-button-login {
+    width: 80%;
+    text-align: center;
+    margin: 5px 0;
+    color: black;
+    font-weight: bold;
+  }
+}
