@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 function Category() {
@@ -8,13 +8,13 @@ function Category() {
   const [visible, setVisible] = useState(true);
   const navigate = useNavigate();
 
-  const handleclick = (temprole) => { 
+  const handleclick = (temprole) => {
     setRole(temprole);
     setVisible(false);
-   
+
   };
 
-  const handlenavigatefun = () =>{
+  const handlenavigatefun = () => {
     navigate('/register');
   }
 
@@ -30,36 +30,40 @@ function Category() {
         </div>
 
         <div className="box-cat">
-          {["Teacher", "Student"].map((temprole) => (
-            <button 
-              className="admin-box" 
-              key={temprole} 
-              onClick={() => handleclick(temprole)}
+          {[
+            { role: "Teacher", subtext: "I'm offering classes or guidance." },
+            { role: "Student", subtext: "I'm looking for classes or appointments." }
+          ].map(({ role, subtext }) => (
+            <button
+              className="admin-box"
+              key={role}
+              onClick={() => handleclick(role)}
             >
-              <p className="PHeader">{temprole}</p>
-              <p className="Psubtext">I'm looking for classes or appointments.</p>
+              <p className="PHeader">{role}</p>
+              <p className="Psubtext">{subtext}</p>
             </button>
           ))}
         </div>
-        {!visible || 
-        <div className="not-active">
-        <button>Signup as a ...</button>
-        </div>
-         }
-  
-               <div className="sub-btn-reg">
-                {!role || <div className="sub-btn-reg">
-                   <button onClick={handlenavigatefun}> SignUp as a {role}</button>
-                </div> }
-               </div>  
-      </div>
-   <center>
 
-   <hr />
-   </center>
+        {!visible ||
+          <div className="not-active">
+            <button>Signup as a ...</button>
+          </div>
+        }
+
+        <div className="sub-btn-reg">
+          {!role || <div className="sub-btn-reg">
+            <button onClick={handlenavigatefun}> SignUp as a {role}</button>
+          </div>}
+        </div>
+      </div>
+      <center>
+
+        <hr />
+      </center>
       <div className="foot-subtext">
-       <p>Already have an account?</p>
-       <p>Try <a href=""> logging in here </a></p>
+        <p>Already have an account?</p>
+        <p>Try<Link to="/login">logging in here </Link></p>
       </div>
     </div>
   );

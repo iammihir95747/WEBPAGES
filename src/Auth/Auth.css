@@ -47,8 +47,8 @@
 
 /* ✅ Spacing for input fields */
 .form-item {
-    width: 300px;
-    margin-top: 8px;
+    width: 350px;
+    margin-top: 16px;
     padding: 6px;
     padding-left: 20px;
 }
@@ -59,11 +59,6 @@ input{
    
 }
 
-.form-item-work{
-    width: 300px;
-    padding: 6px;
-    padding-left: 20px;
-}
 
 .subtext{
     font-size: 10px;
@@ -75,11 +70,13 @@ input{
 }
 .policy{
     text-align: left;
-    font-size: 9px;
-    width: 93%;
+    font-size: 14px;
+    width: 350px;
     margin-top: 14px;
-    color: rgb(168, 159, 159);
-   
+    
+}
+.policy a {
+    color: rgb(109, 72, 170);
 }
 
 
@@ -104,22 +101,15 @@ input::placeholder{
 
 /* ✅ Title styling */
 .titilereg {
-   float: left;
-   text-align: left;
-   display: flex;
-   flex-direction: column; 
-    width: 100%;
-   margin-left: 21px;
-   gap: 3px;
-   font-size:20px;
-   font-weight: bolder;
-   box-shadow: none;
+   font-size:24px;
+  letter-spacing: -1px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ✅ Supporting text */
-.actext {
-    color: gray;
-    font-size: 16px;
+.actext {   
+    font-size: 14px;
+    letter-spacing: 0px;
   }
 
 /* ✅ Paragraph alignment */
@@ -127,23 +117,23 @@ input::placeholder{
 
 /* ✅ Submit Button */
 .sub {
-    width: 300px;
-    padding: 5px;
+    width: 350px;
+    padding: 10px;
     padding-left: 0px;
     padding-right: 0px;
-    background-color: black;
+    background-color: rgb(107, 66, 184);
     color: white;
     font-weight: 400;
     text-align: center;
     border-radius: 5px;
     border: none;
-    margin-top: 10px;
-    transition: 0.3s ease-in-out;
+    margin-top: 16px;
+    transition: 0.1s ease-in-out;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .sub:hover {
-    background-color: rgb(30, 30, 30);
+    background-color: rgb(141, 86, 192);
 }
 
 /* ✅ Mobile Responsiveness */

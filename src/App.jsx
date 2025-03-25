@@ -15,8 +15,8 @@ import Category from './Auth/Category';
 
 function Layout() {
     const location = useLocation();
-    const hideHome = location.pathname === '/category'; // Hide Home on /category
-
+    const hideHome = location.pathname === '/category' || location.pathname === '/register' || location.pathname === '/login'; 
+    
     return (
         <>
             {!hideHome && <Home />}
@@ -34,7 +34,6 @@ function Layout() {
         </>
     );
 }
-
 const App = () => {
     return (
         <Router>

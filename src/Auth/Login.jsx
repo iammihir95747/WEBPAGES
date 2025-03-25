@@ -61,7 +61,7 @@ function Login() { // ✅ Renamed to match functionality
       <div className="register">
         <div className="form-login">
           <form className='form-block' autoComplete='off' onSubmit={handleLogin}>
-          <h5 className="titilereg">Think it. Make it. <br /><span className="actext">Login to your SteadyDusk account</span></h5>
+          <h5 className="titilereg">Signin <br /><span className="actext">Login to your SteadyDusk account</span></h5>
 
             <input 
               className='form-item' 
