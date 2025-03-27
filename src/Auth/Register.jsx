@@ -11,19 +11,15 @@ const API_BASE = "https://server-node-eef9.onrender.com";
 
 const Register = () => {
 
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const role = queryParams.get("role") || "USER";
+  // const location = useLocation();
+  // const queryParams = new URLSearchParams(location.search);
+  // const role = queryParams.get("role") || "USER";
 
   const [formData, setFormData] = useState({
-    username: "", role:role ,email: "", password: "", address: "", phone: "", agreeTerms: false, });
+    username: "" ,email: "", password: "", address: "", phone: "", agreeTerms: false, });
 
   const [loading, setLoading] = useState(false);
 
-
-  useEffect(() => {
-    setFormData((prev) => ({ ...prev, role })); 
-  }, [role]);
  
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -45,7 +41,7 @@ const Register = () => {
       if (!response.ok) throw new Error(data.error || "Registration failed ❌");
 
       toast.success("✅ Registration Successful!");
-      setFormData({ username: "", role : role , email: "", password: "", address: "", phone: "", agreeTerms: false});
+      setFormData({ username: "" , email: "", password: "", address: "", phone: "", agreeTerms: false});
       console.log(formData);
     } catch (error) {
       toast.error(error.message || "Something went wrong ❌");
@@ -81,7 +77,8 @@ const Register = () => {
           <div>
             <input className="form-item" type="text" name="phone" value={formData.phone} onChange={handleChange} placeholder="Enter phone Number" required />
           </div>
-          <input type="hidden" name="" id="" value={role} />
+          
+
 
           <button className="sub" type="submit" disabled={loading}>
             {loading ? "Registering..." : "Register"}
