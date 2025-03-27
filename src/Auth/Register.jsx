@@ -26,32 +26,31 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
     try {
+      console.log("Sending Data:", formData);
+      
       const response = await fetch(`${API_BASE}/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+  
       const data = await response.json();
+      console.log("Server Response:", data);
+  
       if (!response.ok) throw new Error(data.error || "Registration failed ❌");
-
+  
       toast.success("✅ Registration Successful!");
-      setFormData({
-        username: "",
-        email: "",
-        password: "",
-        address: "",
-        phone: "",
-        agreeTerms: false,
-      });
+      setFormData({ username: "", email: "", password: "", address: "", phone: "", agreeTerms: false });
     } catch (error) {
+      console.error("Error in Registration:", error);
       toast.error(error.message || "Something went wrong ❌");
     } finally {
       setLoading(false);
     }
   };
+  
 
   return (
     <div className="register-container">
