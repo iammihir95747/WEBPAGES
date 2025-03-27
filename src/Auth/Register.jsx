@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import "./Auth.css";
 import { toast, Toaster } from "react-hot-toast";
 
+
+
 const API_BASE = "https://server-node-eef9.onrender.com";
+
 
 const Register = () => {
 
@@ -17,10 +20,12 @@ const Register = () => {
 
   const [loading, setLoading] = useState(false);
 
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
