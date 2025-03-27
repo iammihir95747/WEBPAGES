@@ -15,7 +15,9 @@ function Category() {
   };
 
   const handlenavigatefun = () => {
-    navigate('/register');
+    if(role){
+        navigate(`/register?role=${role}`);
+    }
   }
 
   return (
