@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Auth.css";
 import { toast, Toaster } from "react-hot-toast";
+import  { useParams, useSearchParams } from "react-router-dom";
 
 
 
@@ -9,13 +10,17 @@ const API_BASE = "https://server-node-eef9.onrender.com";
 
 const Register = () => {
 
+   const [searchparams] = useSearchParams();
+  const role = searchparams.get('role');
 
   const [formData, setFormData] = useState({
     username: "", 
+    role:role,
     email: "", 
     password: "", 
     address: "", 
     phone: "", 
+    
     agreeTerms: false });
 
   const [loading, setLoading] = useState(false);
@@ -44,12 +49,16 @@ const Register = () => {
       toast.success("✅ Registration Successful!");
       setFormData({ 
         username: "", 
+        role:role,
         email: "", 
         password: "", 
         address: "", 
         phone: "", 
         agreeTerms: false 
       });
+
+      console.log(data,FormData,formData);
+
     } catch (error) {
       toast.error(error.message || "Something went wrong ❌");
     } finally {
@@ -82,6 +91,7 @@ const Register = () => {
           <div>
             <input className="form-item" type="text" name="phone" value={formData.phone} onChange={handleChange} placeholder="Enter phone Number" required />
           </div>
+       Signup as a :-  {role}
           <button className="sub" type="submit" disabled={loading}>
             {loading ? "Registering..." : "Register"}
           </button>

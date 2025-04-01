@@ -11,11 +11,17 @@ function Login() { // ✅ Renamed to match functionality
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  
- 
-  
+
+  const navigaterole = (role,navigate) =>{
+      if(role === "Teacher") navigate ("/teacher-dashboard");
+      else if(role === "Student") navigate ("/student-dashboard");
+      else navigate("/Category");
+  }
   
   const handleLogin = async (e) => {
+
+    const navigate = useNavigate();
+
     e.preventDefault();
     setLoading(true);
 
@@ -43,11 +49,14 @@ function Login() { // ✅ Renamed to match functionality
 
       toast.success("✅ Login Successful");
       localStorage.setItem("token", data.token);
+      localStorage.setItem("role",data.role); // store the role 
       
-      // ✅ Ensure logout button appears instantly
-      window.dispatchEvent(new Event("storage"));
+      navigaterole(data.role , navigate);
 
-      navigate("/Homepage");
+      window.dispatchEvent(new Event("storage"));
+     
+     
+
     } catch (error) {
       toast.error(error.message || "Login failed");
       console.error("Login Error:", error.message);
