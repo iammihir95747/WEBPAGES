@@ -21,7 +21,7 @@ function Category() {
   }
 
   return (
-    <div>
+    <div className="category-main">
       <div className="category">
         <div className="cat-head">
           <center><h2>SteadyDusk</h2></center>
@@ -67,6 +67,10 @@ function Category() {
         <p>Already have an account?</p>
         <p>Try<Link to="/login">logging in here </Link></p>
       </div>
+
+    <div className="right-img">
+      <img src="" alt="" />
+    </div>
     </div>
   );
 }

@@ -6,28 +6,21 @@ import { toast, Toaster } from "react-hot-toast";
 
 const API_BASE = "https://server-node-eef9.onrender.com";
 
-function Login() { // ✅ Renamed to match functionality
+function Login() { 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
-  const navigaterole = (role,navigate) =>{
-      if(role === "Teacher") navigate ("/teacher-dashboard");
-      else if(role === "Student") navigate ("/student-dashboard");
-      else navigate("/Category");
-  }
+  const role = localStorage.getItem("role");
+ 
   
   const handleLogin = async (e) => {
-
-    const navigate = useNavigate();
-
     e.preventDefault();
     setLoading(true);
 
     if (!email || !password) {
       toast.error("❌ Email and Password are required");
-      setLoading(false); // ✅ Fix: Stop loading if validation fails
+      setLoading(false); 
       return;
     }
 
@@ -49,13 +42,20 @@ function Login() { // ✅ Renamed to match functionality
 
       toast.success("✅ Login Successful");
       localStorage.setItem("token", data.token);
-      localStorage.setItem("role",data.role); // store the role 
-      
-      navigaterole(data.role , navigate);
+      localStorage.setItem("role",data.role);
+
+    
+       if(data.role === "Student"){
+         navigate('/StudentRoute');
+       }
+       else if(data.role === "Teacher"){
+         navigate('/TeacherRoute');
+       }
+       else{
+         navigate('/homepage');
+       }
 
       window.dispatchEvent(new Event("storage"));
-     
-     
 
     } catch (error) {
       toast.error(error.message || "Login failed");
@@ -107,4 +107,4 @@ function Login() { // ✅ Renamed to match functionality
   );
 }
 
-export default Login; // ✅ Renamed to match its purpose
+export default Login; 

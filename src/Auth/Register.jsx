@@ -91,7 +91,7 @@ const Register = () => {
           <div>
             <input className="form-item" type="text" name="phone" value={formData.phone} onChange={handleChange} placeholder="Enter phone Number" required />
           </div>
-       Signup as a :-  {role}
+      
           <button className="sub" type="submit" disabled={loading}>
             {loading ? "Registering..." : "Register"}
           </button>

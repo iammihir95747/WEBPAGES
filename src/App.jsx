@@ -7,11 +7,12 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './App.css';
 import Register from './Auth/Register';
 import Login from './Auth/Login';
-import Students from './Pages/Students';
 import Homepage from './components/Homepage';
 import Profile from './Auth/Profile';
 import Services from './components/Services';
 import Category from './Auth/Category';
+import TeachersRoute from './Auth/TeacherRoute';
+import StudentRoute from './Auth/StudentRoute';
 
 function Layout() {
     const location = useLocation();
@@ -28,8 +29,9 @@ function Layout() {
                 <Route path="/Register" element={<Register />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path="/Profile" element={<Profile />} />
-                <Route path="/Students" element={<Students />} />
                 <Route path="/category" element={<Category />} />
+                <Route path="/StudentRoute" element={<StudentRoute />} />
+                <Route path="/TeacherRoute" element={<TeachersRoute />} />
             </Routes>
         </>
     );

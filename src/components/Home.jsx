@@ -36,7 +36,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-        <div className="nav-logo"><Link to="/" className="nav-logo">Steady Dusk</Link></div>
+        <div className="nav-logo"><Link to="/" className="nav-logo">Kaizen.core</Link></div>
         
         <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
           <li><Link to="/services" className="nav-link" onClick={() => setMenuOpen(false)}>Services</Link></li>
@@ -59,10 +59,15 @@ const Navbar = () => {
         {!isLoggedIn ? (
           <>
             <button className="nav-button-login" onClick={handleLogin}>Login</button>
-            <button className="nav-button" onClick={handleRegister}>Sign up for free</button>
+            <button className="nav-button" onClick={handleRegister}>Signup for free</button>
           </>
         ) : (
-          <button className="nav-button" onClick={handleLogout}>Logout</button>
+          <>
+          <a href="/profile" className="profileimg">
+           <img src="https://img.freepik.com/premium-vector/business-man-avatar-vector_1133257-2430.jpg?uid=R138514720&ga=GA1.1.813448193.1738151317&semt=ais_hybrid" alt="" />
+          </a>
+          <button className="nav-button-logout" onClick={handleLogout}>Logout</button> 
+          </>
         )}
       </div>
     </nav>

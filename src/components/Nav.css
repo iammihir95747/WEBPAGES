@@ -1,6 +1,13 @@
 /* Navbar Base Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Boldonse&family=Chivo:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Boldonse&family=Chivo:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
 .navbar {
-  background: rgb(133, 111, 230);
+  
+  color: black;
   font-family: Georgia, 'Times New Roman', Times, serif;
   height: 80px;
   width: 100%;
@@ -8,7 +15,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid black;
 }
 
 .nav-left{
@@ -19,80 +26,78 @@
 
 .nav-logo{
   overflow: hidden;
-  padding-left: 13px;
-  font-size: 20px;
+  padding-left: 10px;
+  font-size: 34px;
+  margin-top: -10px;
   text-decoration: none;
+  font-family: "Jost", sans-serif;
   font-weight:bold;
-  color:#fff;
+  color:#000000;
 }
 
-
 .nav-menu{
-  display: flex;
-  gap: 10px;
-  color: #fff;
-  list-style-type: none;
- margin-top: 15px;
- font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  align-content: center;
+  margin-top: 10px;
+  gap: 20px;
+  color: #000000;
+ list-style-type: none;
+ display: flex;
+ font-family: "Chivo", sans-serif;
  text-align: center;
 }
 
-.nav-link{
-   margin-top: -1px;
-   display: flex;
-   border-radius:4px;
-   overflow: hidden;
-   padding-top: 3px;
-   padding-bottom: 3px;
-   padding-left: 10px;
-   color: black;
-   padding-right: 10px;
-   font-family: Arial, Helvetica, sans-serif;
-  }
+.nav-menu .nav-link{
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  margin-top: 6px;
+  display: inline-block;
+  font-family: "Chivo", sans-serif;  
+  overflow: hidden;
+}
+.nav-menu .nav-link:hover{
+  color: rgb(161, 151, 247);
+  transition: 0.1s ease-in-out;
 
-
-.nav-link:hover{
-  border: none;
-  color: #d1d1d1;
 }
 
 .nav-button {
-  display: inline-block;  /* Ensures padding works */
-  padding: 14px 14px 15px 15px;
-  margin-right:20px;  /* Proper padding */
-  border: none;
-  border-radius: 10px;
-  background-color: white;
-  color: black;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
-  text-align: center;
+  background-color: #b880f7;
+  margin-top: -10px;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Chivo", sans-serif;  
+  border: 1px solid black;
+  display: inline-block;
+  position: relative;
+  padding: 30px 16px 26px 16px;
 }
 
 .nav-button:hover{
-  background-color: rgb(221, 219, 219);
-  transform: scale(1.01);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  transition: 0.3s ease-in-out;
 }
 
 .nav-button-login{
-  margin-right: 10px;
+  background-color: #ffffff;
+  margin-top: -20px;
+  color: #000000;
+  font-family: "Chivo", sans-serif;  
+  border: 1px solid black;
   display: inline-block;
-  padding: 14px 14px 15px 15px;
-  border: none;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
-  padding-left: 13px;
-  padding-right: 13px;
-  border-radius: 4px;
-  background: none;
-  color: #fff;
+  position: relative;
+  padding: 29px 35px 26px 35px;
+  border-right:none;
 }
 
 
 .nav-button-login:hover{
- background-color: #ececec56;
-  transition: 0.1s ease-in-out;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  transition: 0.3s ease-in-out;
 }
 
 
@@ -131,6 +136,7 @@
     cursor: pointer;
      width:10%;
   }
+
 
   /* Mobile Menu */
   .nav-menu {
@@ -190,3 +196,41 @@
     font-weight: bold;
   }
 }
+
+
+.profileimg img{
+  padding:-16px;
+  margin-right: 17px;
+  margin-top: -3px;
+  height: auto;
+  position: relative;
+  display: inline-block;
+  width:74px;
+  mix-blend-mode: multiply;
+  filter: grayscale(100%);
+}
+.profileimg img:hover{
+  filter: grayscale(10%);
+  transition: 0.1s ease-in-out;
+}
+
+.nav-button-logout{
+  background-color: #ffffff;
+  margin-top: -20px;
+  color: #000000;
+  font-family: "Chivo", sans-serif;  
+  border: 1px solid black;
+  display: inline-block;
+  position: relative;
+  padding: 39px 40px 24px 40px;
+  border-right:none;
+
+}
+.nav-button-logout:hover{
+  background-color: #000000;
+  transition: 0.2s ease-in-out;
+  color: #fff;
+}
+
+
+
