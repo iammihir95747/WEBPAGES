@@ -36,7 +36,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-        <div className="nav-logo"><Link to="/" className="nav-logo">Kaizen.core</Link></div>
+        <div className="nav-logo"><Link to="/" className="nav-logo">Kaizen</Link></div>
         
         <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
           <li><Link to="/services" className="nav-link" onClick={() => setMenuOpen(false)}>Services</Link></li>
